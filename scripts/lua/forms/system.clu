@@ -544,10 +544,9 @@ btnNo = UI_CreateCompent( frmAskExit, BUTTON_TYPE, "btnNo", 41, 19, 122, 78 )
 UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
 
 -----------------------------------------------------------------------
--- §¯§à§Ó§Ñ§ñ §¶§à§â§Þ§Ñ
+-- Gear rating
 -----------------------------------------------------------------------	
--- §²§Ö§Û§ä§Ú§ß§Ô §ª§Ô§â§à§Ü§à§Ó (§¶§à§â§Þ§Ñ)
-frmChaTop10 = UI_CreateForm( "frmChaTop10", FALSE, 390, 301, 100, 200, TRUE, FALSE )
+frmChaTop10 = UI_CreateForm( "frmChaTop10", FALSE, 548, 386, 100, 200, TRUE, FALSE )
 UI_FormSetHotKey( frmChaTop10, ALT_KEY, HOTKEY_V ) 
 UI_ShowForm( frmChaTop10, TRUE )
 UI_AddFormToTemplete( frmChaTop10, FORM_MAIN )
@@ -555,30 +554,164 @@ UI_SetIsDrag( frmChaTop10, TRUE )
 UI_SetFormStyle( frmChaTop10, 2 )
 UI_SetAlpha( frmChaTop10, 255 )
 
--- §¶§à§ß
-imgBakAsk2 = UI_CreateCompent( frmChaTop10, IMAGE_TYPE, "imgBakAsk2", 390, 301, 0, 0 )
-UI_LoadImage( imgBakAsk2, "texture/ui/gear_ranking.png", NORMAL, 390, 301, 0, 0 )
+imgBackGround1 = UI_CreateCompent( frmChaTop10, IMAGE_TYPE, "imgBackGround1", 256, 256, 0, 0 )
+UI_LoadImage( imgBackGround1, "texture/ui/plist1.tga", NORMAL, 256,256, 0, 0 )
 
--- §º§Ñ§á§Ü§Ñ
-labTitleD = UI_CreateCompent( frmChaTop10, LABELEX_TYPE, "labTitleD", 100, 11, 8, 4 )
-UI_SetCaption( labTitleD, "Gear score ranking" )
+imgBackGround2 = UI_CreateCompent( frmChaTop10, IMAGE_TYPE, "imgBackGround2", 256, 256, 256, 0 )
+UI_LoadImage( imgBackGround2, "texture/ui/plist2.tga", NORMAL, 256,256, 0, 0 )
+
+imgBackGround3 = UI_CreateCompent( frmChaTop10, IMAGE_TYPE, "imgBackGround3", 256, 130, 0, 256 )
+UI_LoadImage( imgBackGround3, "texture/ui/plist3.tga", NORMAL, 256, 130, 0, 0 )
+
+imgBackGround4 = UI_CreateCompent( frmChaTop10, IMAGE_TYPE, "imgBackGround4", 256, 130, 256, 256 )
+UI_LoadImage( imgBackGround4, "texture/ui/plist4.tga", NORMAL, 256,130, 0, 0 )
+
+imgBackGround5 = UI_CreateCompent( frmChaTop10, IMAGE_TYPE, "imgBackGround5", 46, 256, 512, 0 )
+UI_LoadImage( imgBackGround5, "texture/ui/plist5.tga", NORMAL, 46,256, 0, 0 )
+
+imgBackGround6 = UI_CreateCompent( frmChaTop10, IMAGE_TYPE, "imgBackGround6", 46, 130, 512, 256 )
+UI_LoadImage( imgBackGround6, "texture/ui/plist5.tga", NORMAL, 46,130, 46, 0 )
+
+imgBackGround7 = UI_CreateCompent( frmChaTop10, IMAGE_TYPE, "imgBackGround7", 527, 309, 14, 45 )
+UI_LoadImage( imgBackGround7, "texture/ui/talesofpirates.net/gear-rating-table.png", NORMAL, 527, 309, 0, 0 )
+
+labTitleD = UI_CreateCompent( frmChaTop10, LABELEX_TYPE, "labTitleD", 100, 11, 10, 4 )
+UI_SetCaption( labTitleD, "Gear rating" )
 UI_SetTextColor( labTitleD, COLOR_BLACK )
 UI_SetLabelExFont( labTitleD, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
--- §¬§ß§à§á§Ü§Ñ §Ù§Ñ§Ü§â§í§ä§Ú§ñ
-btnClose = UI_CreateCompent( frmChaTop10, BUTTON_TYPE, "btnClose", 14, 14, 370, 3 )
+btnClose = UI_CreateCompent( frmChaTop10, BUTTON_TYPE, "btnClose", 14, 14, 528, 3 )
 UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
--- §­§Ú§ã§ä
-lstChaTop10 = UI_CreateListView( frmChaTop10, "lstChaTop10", 372, 230, 12, 63, 5, 2 )
-UI_ListViewSetTitle( lstChaTop10, 0, 23, "", 0, 0, 0, 0 ) -- §±§à§â§ñ§Õ§à§Ü
-UI_ListViewSetTitle( lstChaTop10, 1, 130, "", 0, 0, 0, 0 ) -- §ª§Þ§ñ
-UI_ListViewSetTitle( lstChaTop10, 2, 44, "", 0, 0, 0, 0 ) -- §°§é§Ü§Ú
-UI_ListViewSetTitle( lstChaTop10, 3, 44, "", 0, 0, 0, 0 ) -- §­§Ó§Ý
-UI_ListViewSetTitle( lstChaTop10, 4, 100, "", 0, 0, 0, 0 ) -- §±§â§à§æ§Ñ
+labTitle = UI_CreateCompent( frmChaTop10, LABELEX_TYPE, "labTitle", 400, 150, 34, 55 )
+UI_SetCaption( labTitle, "#")
+UI_SetTextColor( labTitle, COLOR_BLACK )
+UI_SetLabelExFont( labTitle, FONT18, TRUE, COLOR_WHITE )
+
+labTitle1 = UI_CreateCompent( frmChaTop10, LABELEX_TYPE, "labTitle1", 400, 150, 83, 55 )
+UI_SetCaption( labTitle1, "Player")
+UI_SetTextColor( labTitle1, COLOR_BLACK )
+UI_SetLabelExFont( labTitle1, FONT18, TRUE, COLOR_WHITE )
+
+labTitle2 = UI_CreateCompent( frmChaTop10, LABELEX_TYPE, "labTitle2", 400, 150, 235, 55 )
+UI_SetCaption( labTitle2, "Points")
+UI_SetTextColor( labTitle2, COLOR_BLACK )
+UI_SetLabelExFont( labTitle2, FONT18, TRUE, COLOR_WHITE )
+
+labTitle3 = UI_CreateCompent( frmChaTop10, LABELEX_TYPE, "labTitle3", 400, 150, 310, 55 )
+UI_SetCaption( labTitle3, "Level")
+UI_SetTextColor( labTitle3, COLOR_BLACK )
+UI_SetLabelExFont( labTitle3, FONT18, TRUE, COLOR_WHITE )
+
+labTitle4 = UI_CreateCompent( frmChaTop10, LABELEX_TYPE, "labTitle4", 400, 150, 375, 55 )
+UI_SetCaption( labTitle4, "Job")
+UI_SetTextColor( labTitle4, COLOR_BLACK )
+UI_SetLabelExFont( labTitle4, FONT18, TRUE, COLOR_WHITE )
+
+lstChaTop10 = UI_CreateListView( frmChaTop10, "lstChaTop10", 525, 290, 30, 80, 6, 2 )
+UI_ListViewSetTitle( lstChaTop10, 0, 50, "", 0, 0, 0, 0 )
+UI_ListViewSetTitle( lstChaTop10, 1, 170, "", 0, 0, 0, 0 )
+UI_ListViewSetTitle( lstChaTop10, 2, 70, "", 0, 0, 0, 0 )
+UI_ListViewSetTitle( lstChaTop10, 3, 50, "", 0, 0, 0, 0 )
+UI_ListViewSetTitle( lstChaTop10, 4, 100, "", 0, 0, 0, 0 )
 
 scrollid = UI_GetScroll( lstChaTop10 )
+UI_SetSize( scrollid, 11, 1 )
+UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+
+id = UI_GetScrollObj( scrollid, SCROLL_UP )
+UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_SetSize( id, 11, 9 )
+
+id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
+UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_SetSize( id, 11, 43 )
+
+id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
+UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_SetSize( id, 11, 9 )
+
+-----------------------------------------------------------------------
+-- k\d\a rating
+-----------------------------------------------------------------------	
+frmChaTopKDA = UI_CreateForm( "frmChaTopKDA", FALSE, 548, 386, 100, 200, TRUE, FALSE )
+UI_FormSetHotKey( frmChaTopKDA, ALT_KEY, HOTKEY_V ) 
+UI_ShowForm( frmChaTopKDA, TRUE )
+UI_AddFormToTemplete( frmChaTopKDA, FORM_MAIN )
+UI_SetIsDrag( frmChaTopKDA, TRUE )
+UI_SetFormStyle( frmChaTopKDA, 2 )
+UI_SetAlpha( frmChaTopKDA, 255 )
+
+imgBackGround1 = UI_CreateCompent( frmChaTopKDA, IMAGE_TYPE, "imgBackGround1", 256, 256, 0, 0 )
+UI_LoadImage( imgBackGround1, "texture/ui/plist1.tga", NORMAL, 256,256, 0, 0 )
+
+imgBackGround2 = UI_CreateCompent( frmChaTopKDA, IMAGE_TYPE, "imgBackGround2", 256, 256, 256, 0 )
+UI_LoadImage( imgBackGround2, "texture/ui/plist2.tga", NORMAL, 256,256, 0, 0 )
+
+imgBackGround3 = UI_CreateCompent( frmChaTopKDA, IMAGE_TYPE, "imgBackGround3", 256, 130, 0, 256 )
+UI_LoadImage( imgBackGround3, "texture/ui/plist3.tga", NORMAL, 256, 130, 0, 0 )
+
+imgBackGround4 = UI_CreateCompent( frmChaTopKDA, IMAGE_TYPE, "imgBackGround4", 256, 130, 256, 256 )
+UI_LoadImage( imgBackGround4, "texture/ui/plist4.tga", NORMAL, 256,130, 0, 0 )
+
+imgBackGround5 = UI_CreateCompent( frmChaTopKDA, IMAGE_TYPE, "imgBackGround5", 46, 256, 512, 0 )
+UI_LoadImage( imgBackGround5, "texture/ui/plist5.tga", NORMAL, 46,256, 0, 0 )
+
+imgBackGround6 = UI_CreateCompent( frmChaTopKDA, IMAGE_TYPE, "imgBackGround6", 46, 130, 512, 256 )
+UI_LoadImage( imgBackGround6, "texture/ui/plist5.tga", NORMAL, 46,130, 46, 0 )
+
+imgBackGround7 = UI_CreateCompent( frmChaTopKDA, IMAGE_TYPE, "imgBackGround7", 527, 309, 14, 45 )
+UI_LoadImage( imgBackGround7, "texture/ui/talesofpirates.net/kda-rating-table.png", NORMAL, 527, 309, 0, 0 )
+
+labTitleD = UI_CreateCompent( frmChaTopKDA, LABELEX_TYPE, "labTitleD", 100, 11, 10, 4 )
+UI_SetCaption( labTitleD, "Kills-Deaths-Assists rating" )
+UI_SetTextColor( labTitleD, COLOR_BLACK )
+UI_SetLabelExFont( labTitleD, DEFAULT_FONT, TRUE, COLOR_WHITE )
+
+btnClose = UI_CreateCompent( frmChaTopKDA, BUTTON_TYPE, "btnClose", 14, 14, 528, 3 )
+UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
+
+labTitle = UI_CreateCompent( frmChaTopKDA, LABELEX_TYPE, "labTitle", 400, 150, 34, 55 )
+UI_SetCaption( labTitle, "#")
+UI_SetTextColor( labTitle, COLOR_BLACK )
+UI_SetLabelExFont( labTitle, FONT18, TRUE, COLOR_WHITE )
+
+labTitle1 = UI_CreateCompent( frmChaTopKDA, LABELEX_TYPE, "labTitle1", 400, 150, 83, 55 )
+UI_SetCaption( labTitle1, "Player")
+UI_SetTextColor( labTitle1, COLOR_BLACK )
+UI_SetLabelExFont( labTitle1, FONT18, TRUE, COLOR_WHITE )
+
+labTitle2 = UI_CreateCompent( frmChaTopKDA, LABELEX_TYPE, "labTitle2", 400, 150, 210, 55 )
+UI_SetCaption( labTitle2, "K\\D\\A")
+UI_SetTextColor( labTitle2, COLOR_BLACK )
+UI_SetLabelExFont( labTitle2, FONT18, TRUE, COLOR_WHITE )
+
+labTitle3 = UI_CreateCompent( frmChaTopKDA, LABELEX_TYPE, "labTitle3", 400, 150, 280, 55 )
+UI_SetCaption( labTitle3, "Wins")
+UI_SetTextColor( labTitle3, COLOR_BLACK )
+UI_SetLabelExFont( labTitle3, FONT18, TRUE, COLOR_WHITE )
+
+labTitle4 = UI_CreateCompent( frmChaTopKDA, LABELEX_TYPE, "labTitle4", 400, 150, 340, 55 )
+UI_SetCaption( labTitle4, "Defeats")
+UI_SetTextColor( labTitle4, COLOR_BLACK )
+UI_SetLabelExFont( labTitle4, FONT18, TRUE, COLOR_WHITE )
+
+labTitle5 = UI_CreateCompent( frmChaTopKDA, LABELEX_TYPE, "labTitle5", 400, 150, 430, 55 )
+UI_SetCaption( labTitle5, "Winrate")
+UI_SetTextColor( labTitle5, COLOR_BLACK )
+UI_SetLabelExFont( labTitle5, FONT18, TRUE, COLOR_WHITE )
+
+lstChaTopKDA = UI_CreateListView( frmChaTopKDA, "lstChaTopKDA", 525, 290, 30, 80, 6, 2 )
+UI_ListViewSetTitle( lstChaTopKDA, 0, 50, "", 0, 0, 0, 0 )
+UI_ListViewSetTitle( lstChaTopKDA, 1, 135, "", 0, 0, 0, 0 )
+UI_ListViewSetTitle( lstChaTopKDA, 2, 67, "", 0, 0, 0, 0 )
+UI_ListViewSetTitle( lstChaTopKDA, 3, 70, "", 0, 0, 0, 0 )
+UI_ListViewSetTitle( lstChaTopKDA, 4, 85, "", 0, 0, 0, 0 )
+UI_ListViewSetTitle( lstChaTopKDA, 5, 10, "", 0, 0, 0, 0 )
+
+scrollid = UI_GetScroll( lstChaTopKDA )
 UI_SetSize( scrollid, 11, 1 )
 UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
 
