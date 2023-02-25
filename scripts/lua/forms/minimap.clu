@@ -77,13 +77,13 @@ btnOpenTop = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnOpenTop", 20, 20, 54
 UI_LoadButtonImage( btnOpenTop, "texture/ui/corsairs/botton3.png", 20, 20, 50, 84, FALSE )
 UI_SetHint( btnOpenTop, "Gear rating" )
 
---btnKdaRating = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnKdaRating", 20, 20, 33, 115 )
---UI_LoadButtonImage( btnKdaRating, "texture/ui/corsairs/botton3.png", 20, 20, 50, 84, FALSE )
---UI_SetHint( btnKdaRating, "KDA rating" )
+btnKdaRating = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnKdaRating", 20, 20, 33, 115 )
+UI_LoadButtonImage( btnKdaRating, "texture/ui/corsairs/botton3.png", 20, 20, 50, 84, FALSE )
+UI_SetHint( btnKdaRating, "KDA rating" )
 
---btnRogerRaid = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnRogerRaid", 37, 39, 105, -1 )
---UI_LoadButtonImage( btnRogerRaid, "texture/ui/talesofpirates.net/bell.png", 37, 39, 0, 0, FALSE )
---UI_SetHint( btnRogerRaid, "Golden Roger (Purchase for IMPs!)" )
+btnRogerRaid = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnRogerRaid", 37, 39, 105, -1 )
+UI_LoadButtonImage( btnRogerRaid, "texture/ui/talesofpirates.net/bell.png", 37, 39, 0, 0, FALSE )
+UI_SetHint( btnRogerRaid, "Golden Roger (Purchase for IMPs!)" )
 
 cbxShowGuildCircle = UI_CreateCompent( frmMinimap, CHECK_TYPE, "cbxShowGuildCircle", 36, 36, -45, 15 )
 UI_LoadImage( cbxShowGuildCircle, "texture/ui/mordo/specialMapMenu/btnCircle.tga", UNCHECKED, 36, 36, 0, 0 )
